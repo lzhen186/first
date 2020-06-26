@@ -50,7 +50,7 @@ public class QueryStudentByPage extends HttpServlet {
 		page.setStudents(students);
 	
 		
-		request.setAttribute("p",page);
+		request.setAttribute("pss",page);
 		request.getRequestDispatcher("index.jsp").forward(request, response);;
 	}
 

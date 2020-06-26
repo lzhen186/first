@@ -46,7 +46,7 @@
 					out.print("删除成功！");
 				}else if(error.equals("noupError")){
 					out.print("更新成功！");
-				}//根本没有执行增加
+				}//根本没有执行
 			}	
 		%>
 	
@@ -61,14 +61,12 @@
 			
 			<%
 				//获取request域中的数据
-				Page p  = (Page)request.getAttribute("p") ;			
+				Page p  = (Page)request.getAttribute("pss") ;			
 			
 				for(Student student:p.getStudents()){
 			%>
 			<tr>
 				<td><%=student.getSno() %></td>
-				
-				
 				<td><%=student.getSname() %></td>
 				<td><%=student.getSage() %></td>
 				<td><a href="QueryStudentBySnoServlet?sno=<%=student.getSno() %>">编辑</a> <a onClick="return confirm('删除后将无法恢复,确定要删除?')"  href="DeleteStudentServlet?sno=<%=student.getSno() %>" >删除</a> </td>
